@@ -18,11 +18,11 @@ University of California, Merced - Adobe Research
 If you find our work useful for your project, please consider citing our paper.
 
 ```
-@misc{lyu2024gaga,
-      title={Gaga: Group Any Gaussians via 3D-aware Memory Bank}, 
-      author={Weijie Lyu and Xueting Li and Abhijit Kundu and Yi-Hsuan Tsai and Ming-Hsuan Yang},
+@misc{lyu2024facelift,
+      title={FaceLift: Single Image to 3D Head with View Generation and GS-LRM}, 
+      author={Weijie Lyu and Yi Zhou and Ming-Hsuan Yang and Zhixin Shu},
       year={2024},
-      eprint={2404.07977},
+      eprint={},
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }
