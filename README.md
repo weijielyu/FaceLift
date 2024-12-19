@@ -8,7 +8,7 @@ University of California, Merced - Adobe Research
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fweijielyu%2FFaceLift&count_bg=%2379C83D&title_bg=%23F5F5DC&icon=github.svg&icon_color=%2379C83D&title=🔎&edge_flat=false)](https://hits.seeyoufarm.com)
 
 <div align='center'>
-<img alt="image" src='static/images/teaser.png'>
+<img alt="image" src='media/teaser.png'>
 </div>
 
 > *FaceLift* takes a single image of a human face as input and generates a high-fidelity 3D Gaussian head representation. The generated Gaussian representation enables high-quality, full-head novel view synthesis (NVS) while accurately capturing fine details of the face and hair.
