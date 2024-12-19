@@ -72,7 +72,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/weijielyu/Gaga"
+                <a href="https://github.com/weijielyu/FaceLift"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -83,9 +83,9 @@
             </div>
           </div>
           <!-- Submission Status. -->
-          <div class="title-row">
+          <!-- <div class="title-row">
             <span class="title is-4 publication-venue">arXiv 2024</span>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -98,13 +98,18 @@
       <div class="columns is-centered has-text-centered">
         <img src="static/images/teaser.png" width="100%">
       </div>
+      <a class="columns is-centered"
+        href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/001.ply">Open
+        Interactive Viewer
+      </a>
     </div>
     <h2 class="subtitle has-text-centered">
-        <i>FaceLift</i> takes a single image of a human face as input and generates a high-fidelity 3D Gaussian head representation.
-        The generated Gaussian representation enables high-quality, 
-        full-head novel view synthesis (NVS) while accurately capturing fine details of the face and hair.
+      <i>FaceLift</i> takes a single image of a human face as input 
+      and generates a high-fidelity 3D Gaussian head representation.
+      The generated Gaussian representation enables high-quality, 
+      full-head novel view synthesis (NVS) while accurately capturing 
+      fine details of the face and hair.
     </h2>
-    </div>
   </div>
 </section>
 
@@ -116,8 +121,9 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present <i>FaceLift</i>, a novel feed-forward approach for rapid, high-quality 
-            360-degree head reconstruction from a single image. Our pipeline begins by 
+            We present <i>FaceLift</i>, a novel feed-forward approach for 
+            rapid, high-quality <b style="color:hsl(204, 86%, 53%)">360-degree head reconstruction</b> 
+            from <b style="color:hsl(204, 86%, 53%)">a single image</b>. Our pipeline begins by 
             employing a multi-view latent diffusion model that generates consistent side 
             and back views of the head from a single facial input. These generated views 
             then serve as input to a GS-LRM reconstructor, which produces a comprehensive 
@@ -149,6 +155,9 @@
       <div class="column is-full-width">
         <h2 class="title is-3 has-text-centered">Results</h2>
         <h3 class="title is-4 has-text-centered">Single Image to 3D Head</h3>
+        <h4 class="title is-5 has-text-centered">
+          <a href="./more_results.html">(Click to see more results)</a>
+        </h4>
         <p>
           FaceLift is a feed-forward approach that lifts a single facial image to a detailed 3D reconstruction 
           with preserved identity features.
@@ -159,60 +168,45 @@
           <div class="columns is-centered">
             <div class="column">
               <h2 style="text-align: center;">
-                <img src="https://huggingface.co/facelift-web/facelift/resolve/main/images/000.png" width="50%">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/teaser.png" width="75%">
               </h2>
-              <video controls muted loop width="270" height="270">
+              <video controls muted loop autoplay>
                 <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/results/000.mp4" type="video/mp4">
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/teaser.mp4" type="video/mp4">
               </video>
               <h2 style="text-align: center;">
                 <a
-                  href="splat/index.html?url=https://huggingface.co/facelift-web/facelift/resolve/main/plys/000.ply">Open
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/teaser.ply">Open
                   Interactive Viewer
                 </a>
               </h2> 
             </div>
             <div class="column">
               <h2 style="text-align: center;">
-                <img src="https://huggingface.co/facelift-web/facelift/resolve/main/images/001.png" width="50%">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/013.png" width="75%">
               </h2>
-              <video controls muted loop width="270" height="270">
+              <video controls muted loop autoplay>
                 <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/results/001.mp4" type="video/mp4">
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/013.mp4" type="video/mp4">
               </video>
               <h2 style="text-align: center;">
                 <a
-                  href="splat/index.html?url=https://huggingface.co/facelift-web/facelift/resolve/main/plys/001.ply">Open
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/013.ply">Open
                   Interactive Viewer
                 </a>
               </h2> 
             </div>
             <div class="column">
               <h2 style="text-align: center;">
-                <img src="https://huggingface.co/facelift-web/facelift/resolve/main/images/002.png" width="50%">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/035.png" width="75%">
               </h2>
-              <video controls muted loop width="270" height="270">
+              <video controls muted loop autoplay>
                 <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/results/002.mp4" type="video/mp4">
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/035.mp4" type="video/mp4">
               </video>
               <h2 style="text-align: center;">
                 <a
-                  href="splat/index.html?url=https://huggingface.co/facelift-web/facelift/resolve/main/plys/002.ply">Open
-                  Interactive Viewer
-                </a>
-              </h2> 
-            </div>
-            <div class="column">
-              <h2 style="text-align: center;">
-                <img src="https://huggingface.co/facelift-web/facelift/resolve/main/images/003.png" width="50%">
-              </h2>
-              <video controls muted loop width="270" height="270">
-                <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/results/003.mp4" type="video/mp4">
-              </video>
-              <h2 style="text-align: center;">
-                <a
-                  href="splat/index.html?url=https://huggingface.co/facelift-web/facelift/resolve/main/plys/003.ply">Open
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/035.ply">Open
                   Interactive Viewer
                 </a>
               </h2> 
@@ -225,257 +219,45 @@
           <div class="columns is-centered">
             <div class="column">
               <h2 style="text-align: center;">
-                <img src="https://huggingface.co/facelift-web/facelift/resolve/main/images/004.png" width="50%">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/004.png" width="75%">
               </h2>
-              <video controls muted loop width="270" height="270">
+              <video controls muted loop autoplay>
                 <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/results/004.mp4" type="video/mp4">
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/004.mp4" type="video/mp4">
               </video>
               <h2 style="text-align: center;">
                 <a
-                  href="splat/index.html?url=https://huggingface.co/facelift-web/facelift/resolve/main/plys/004.ply">Open
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/004.ply">Open
                   Interactive Viewer
                 </a>
               </h2> 
             </div>
             <div class="column">
               <h2 style="text-align: center;">
-                <img src="https://huggingface.co/facelift-web/facelift/resolve/main/images/005.png" width="50%">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/003.png" width="75%">
               </h2>
-              <video controls muted loop width="270" height="270">
+              <video controls muted loop autoplay>
                 <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/results/005.mp4" type="video/mp4">
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/003.mp4" type="video/mp4">
               </video>
               <h2 style="text-align: center;">
                 <a
-                  href="splat/index.html?url=https://huggingface.co/facelift-web/facelift/resolve/main/plys/005.ply">Open
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/003.ply">Open
                   Interactive Viewer
                 </a>
               </h2> 
             </div>
             <div class="column">
               <h2 style="text-align: center;">
-                <img src="https://huggingface.co/facelift-web/facelift/resolve/main/images/006.png" width="50%">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/025.png" width="75%">
               </h2>
-              <video controls muted loop width="270" height="270">
+              <video controls muted loop autoplay>
                 <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/results/006.mp4" type="video/mp4">
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/025.mp4" type="video/mp4">
               </video>
               <h2 style="text-align: center;">
                 <a
-                  href="splat/index.html?url=https://huggingface.co/facelift-web/facelift/resolve/main/plys/006.ply">Open
-                  Interactive Viewer
-                </a>
-              </h2> 
-            </div>
-            <div class="column">
-              <h2 style="text-align: center;">
-                <img src="https://huggingface.co/facelift-web/facelift/resolve/main/images/007.png" width="50%">
-              </h2>
-              <video controls muted loop width="270" height="270">
-                <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/results/007.mp4" type="video/mp4">
-              </video>
-              <h2 style="text-align: center;">
-                <a
-                  href="splat/index.html?url=https://huggingface.co/facelift-web/facelift/resolve/main/plys/007.ply">Open
-                  Interactive Viewer
-                </a>
-              </h2> 
-            </div>
-          </div>
-        </div>
-        <!-- row 3 -->
-        <h3 class="title is-4 has-text-centered"></h3>
-        <div class="container is-max-desktop">
-          <div class="columns is-centered">
-            <div class="column">
-              <h2 style="text-align: center;">
-                <img src="https://huggingface.co/facelift-web/facelift/resolve/main/images/008.jpeg" width="50%">
-              </h2>
-              <video controls muted loop width="270" height="270">
-                <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/results/008.mp4" type="video/mp4">
-              </video>
-              <h2 style="text-align: center;">
-                <a
-                  href="splat/index.html?url=https://huggingface.co/facelift-web/facelift/resolve/main/plys/008.ply">Open
-                  Interactive Viewer
-                </a>
-              </h2> 
-            </div>
-            <div class="column">
-              <h2 style="text-align: center;">
-                <img src="https://huggingface.co/facelift-web/facelift/resolve/main/images/009.jpeg" width="50%">
-              </h2>
-              <video controls muted loop width="270" height="270">
-                <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/results/009.mp4" type="video/mp4">
-              </video>
-              <h2 style="text-align: center;">
-                <a
-                  href="splat/index.html?url=https://huggingface.co/facelift-web/facelift/resolve/main/plys/009.ply">Open
-                  Interactive Viewer
-                </a>
-              </h2> 
-            </div>
-            <div class="column">
-              <h2 style="text-align: center;">
-                <img src="https://huggingface.co/facelift-web/facelift/resolve/main/images/010.jpeg" width="50%">
-              </h2>
-              <video controls muted loop width="270" height="270">
-                <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/results/010.mp4" type="video/mp4">
-              </video>
-              <h2 style="text-align: center;">
-                <a
-                  href="splat/index.html?url=https://huggingface.co/facelift-web/facelift/resolve/main/plys/010.ply">Open
-                  Interactive Viewer
-                </a>
-              </h2> 
-            </div>
-            <div class="column">
-              <h2 style="text-align: center;">
-                <img src="https://huggingface.co/facelift-web/facelift/resolve/main/images/011.jpeg" width="50%">
-              </h2>
-              <video controls muted loop width="270" height="270">
-                <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/results/011.mp4" type="video/mp4">
-              </video>
-              <h2 style="text-align: center;">
-                <a
-                  href="splat/index.html?url=https://huggingface.co/facelift-web/facelift/resolve/main/plys/011.ply">Open
-                  Interactive Viewer
-                </a>
-              </h2> 
-            </div>
-          </div>
-        <!-- row 4 -->
-        <h3 class="title is-4 has-text-centered"></h3>
-        <div class="container is-max-desktop">
-          <div class="columns is-centered">
-            <div class="column">
-              <h2 style="text-align: center;">
-                <img src="https://huggingface.co/facelift-web/facelift/resolve/main/images/012.jpeg" width="50%">
-              </h2>
-              <video controls muted loop width="270" height="270">
-                <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/results/012.mp4" type="video/mp4">
-              </video>
-              <h2 style="text-align: center;">
-                <a
-                  href="splat/index.html?url=https://huggingface.co/facelift-web/facelift/resolve/main/plys/012.ply">Open
-                  Interactive Viewer
-                </a>
-              </h2> 
-            </div>
-            <div class="column">
-              <h2 style="text-align: center;">
-                <img src="https://huggingface.co/facelift-web/facelift/resolve/main/images/013.jpeg" width="50%">
-              </h2>
-              <video controls muted loop width="270" height="270">
-                <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/results/013.mp4" type="video/mp4">
-              </video>
-              <h2 style="text-align: center;">
-                <a
-                  href="splat/index.html?url=https://huggingface.co/facelift-web/facelift/resolve/main/plys/013.ply">Open
-                  Interactive Viewer
-                </a>
-              </h2> 
-            </div>
-            <div class="column">
-              <h2 style="text-align: center;">
-                <img src="https://huggingface.co/facelift-web/facelift/resolve/main/images/014.jpeg" width="50%">
-              </h2>
-              <video controls muted loop width="270" height="270">
-                <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/results/014.mp4" type="video/mp4">
-              </video>
-              <h2 style="text-align: center;">
-                <a
-                  href="splat/index.html?url=https://huggingface.co/facelift-web/facelift/resolve/main/plys/014.ply">Open
-                  Interactive Viewer
-                </a>
-              </h2> 
-            </div>
-            <div class="column">
-              <h2 style="text-align: center;">
-                <img src="https://huggingface.co/facelift-web/facelift/resolve/main/images/015.jpeg" width="50%">
-              </h2>
-              <video controls muted loop width="270" height="270">
-                <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/results/015.mp4" type="video/mp4">
-              </video>
-              <h2 style="text-align: center;">
-                <a
-                  href="splat/index.html?url=https://huggingface.co/facelift-web/facelift/resolve/main/plys/015.ply">Open
-                  Interactive Viewer
-                </a>
-              </h2> 
-            </div>
-          </div>
-        </div>
-        <!-- row 5 -->
-        <h3 class="title is-4 has-text-centered"></h3>
-        <div class="container is-max-desktop">
-          <div class="columns is-centered">
-            <div class="column">
-              <h2 style="text-align: center;">
-                <img src="https://huggingface.co/facelift-web/facelift/resolve/main/images/016.jpeg" width="50%">
-              </h2>
-              <video controls muted loop width="270" height="270">
-                <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/results/016.mp4" type="video/mp4">
-              </video>
-              <h2 style="text-align: center;">
-                <a
-                  href="splat/index.html?url=https://huggingface.co/facelift-web/facelift/resolve/main/plys/016.ply">Open
-                  Interactive Viewer
-                </a>
-              </h2> 
-            </div>
-            <div class="column">
-              <h2 style="text-align: center;">
-                <img src="https://huggingface.co/facelift-web/facelift/resolve/main/images/017.jpeg" width="50%">
-              </h2>
-              <video controls muted loop width="270" height="270">
-                <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/results/017.mp4" type="video/mp4">
-              </video>
-              <h2 style="text-align: center;">
-                <a
-                  href="splat/index.html?url=https://huggingface.co/facelift-web/facelift/resolve/main/plys/017.ply">Open
-                  Interactive Viewer
-                </a>
-              </h2> 
-            </div>
-            <div class="column">
-              <h2 style="text-align: center;">
-                <img src="https://huggingface.co/facelift-web/facelift/resolve/main/images/018.jpeg" width="50%">
-              </h2>
-              <video controls muted loop width="270" height="270">
-                <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/results/018.mp4" type="video/mp4">
-              </video>
-              <h2 style="text-align: center;">
-                <a
-                  href="splat/index.html?url=https://huggingface.co/facelift-web/facelift/resolve/main/plys/018.ply">Open
-                  Interactive Viewer
-                </a>
-              </h2> 
-            </div>
-            <div class="column">
-              <h2 style="text-align: center;">
-                <img src="https://huggingface.co/facelift-web/facelift/resolve/main/images/019.png" width="50%">
-              </h2>
-              <video controls muted loop width="270" height="270">
-                <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/results/019.mp4" type="video/mp4">
-              </video>
-              <h2 style="text-align: center;">
-                <a
-                  href="splat/index.html?url=https://huggingface.co/facelift-web/facelift/resolve/main/plys/019.ply">Open
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/025.ply">Open
                   Interactive Viewer
                 </a>
               </h2> 
@@ -494,16 +276,16 @@
           <div class="columns is-centered">
             <div class="column">
               <h4 class="title is-5 is-centered has-text-centered"><b style="color:#808080">Input Video</b></h4>
-              <video controls muted loop>
+              <video controls muted loop autoplay>
                 <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/4d_nvs/inputs/001.mov" type="video/mp4">
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/4d_nvs/inputs/001.mov" type="video/mp4">
               </video>
             </div>
             <div class="column is-centered has-text-centered">
               <h4 class="title is-5 is-centered has-text-centered"><b style="color:#808080">4D Rendering Results</b></h4>
-              <video controls muted loop width="247" height="247">
+              <video controls muted loop autoplay width="247" height="247">
                 <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/4d_nvs/outputs/001.mp4" type="video/mp4">
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/4d_nvs/outputs/001.mp4" type="video/mp4">
               </video>
             </div>
           </div>
@@ -513,15 +295,15 @@
         <div class="container is-max-desktop">
           <div class="columns is-centered">
             <div class="column">
-              <video controls muted loop>
+              <video controls muted loop autoplay>
                 <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/4d_nvs/inputs/002.mov" type="video/mp4">
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/4d_nvs/inputs/002.mov" type="video/mp4">
               </video>
             </div>
             <div class="column is-centered has-text-centered">
-              <video controls muted loop width="247" height="247">
+              <video controls muted loop autoplay width="247" height="247">
                 <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/4d_nvs/outputs/002.mp4" type="video/mp4">
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/4d_nvs/outputs/002.mp4" type="video/mp4">
               </video>
             </div>
           </div>
@@ -531,37 +313,20 @@
         <div class="container is-max-desktop">
           <div class="columns is-centered">
             <div class="column">
-              <video controls muted loop>
+              <video controls muted loop autoplay>
                 <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/4d_nvs/inputs/004.mov" type="video/mp4">
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/4d_nvs/inputs/005.mov" type="video/mp4">
               </video>
             </div>
             <div class="column is-centered has-text-centered">
-              <video controls muted loop width="263" height="263">
+              <video controls muted loop autoplay width="263" height="263">
                 <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/4d_nvs/outputs/004.mp4" type="video/mp4">
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/4d_nvs/outputs/005.mp4" type="video/mp4">
               </video>
             </div>
           </div>
         </div>
-        <!-- row 4 -->
         <h3 class="title is-4 has-text-centered"></h3>
-        <div class="container is-max-desktop">
-          <div class="columns is-centered">
-            <div class="column">
-              <video controls muted loop>
-                <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/4d_nvs/inputs/005.mov" type="video/mp4">
-              </video>
-            </div>
-            <div class="column is-centered has-text-centered">
-              <video controls muted loop width="263" height="263">
-                <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/4d_nvs/outputs/005.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-        </div>
         <p>
           FaceLift can be combined with 2D face animation methods like <a href="https://liveportrait.github.io" target="_blank">LivePortrait</a> to achieve 3D face animation.
         </p>
@@ -571,20 +336,20 @@
           <div class="columns is-centered">
             <div class="column is-centered has-text-centered">
               <h4 class="title is-5 is-centered has-text-centered"><b style="color:#808080">Input Image</b></h4>
-              <img src="https://huggingface.co/facelift-web/facelift/resolve/main/images/000.png">
+              <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/000.png">
             </div>
             <div class="column is-centered has-text-centered">
               <h4 class="title is-5 is-centered has-text-centered"><b style="color:#808080">2D Animation (by LivePortrait)</b></h4>
-              <video controls muted loop>
+              <video controls muted loop autoplay>
                 <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/4d_nvs/inputs/live_001.mp4" type="video/mp4">
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/4d_nvs/inputs/live_001.mp4" type="video/mp4">
               </video>
             </div>
             <div class="column is-centered has-text-centered">
               <h4 class="title is-5 is-centered has-text-centered"><b style="color:#808080">3D Animation</b></h4>
-              <video controls muted loop>
+              <video controls muted loop autoplay>
                 <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/4d_nvs/outputs/live_001.mp4" type="video/mp4">
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/4d_nvs/outputs/live_001.mp4" type="video/mp4">
               </video>
             </div>
           </div>
@@ -595,20 +360,20 @@
           <div class="columns is-centered">
             <div class="column is-centered has-text-centered">
               <h4 class="title is-5 is-centered has-text-centered"><b style="color:#808080">Input Image</b></h4>
-              <img src="https://huggingface.co/facelift-web/facelift/resolve/main/images/005.png">
+              <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/005.png">
             </div>
             <div class="column is-centered has-text-centered">
               <h4 class="title is-5 is-centered has-text-centered"><b style="color:#808080">2D Animation (by LivePortrait)</b></h4>
-              <video controls muted loop>
+              <video controls muted loop autoplay>
                 <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/4d_nvs/inputs/live_002.mp4" type="video/mp4">
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/4d_nvs/inputs/live_002.mp4" type="video/mp4">
               </video>
             </div>
             <div class="column is-centered has-text-centered">
               <h4 class="title is-5 is-centered has-text-centered"><b style="color:#808080">3D Animation</b></h4>
-              <video controls muted loop>
+              <video controls muted loop autoplay>
                 <!-- Your video here -->
-                <source src="https://huggingface.co/facelift-web/facelift/resolve/main/videos/4d_nvs/outputs/live_002.mp4" type="video/mp4">
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/4d_nvs/outputs/live_002.mp4" type="video/mp4">
               </video>
             </div>
           </div>

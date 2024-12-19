@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="FaceLift takes a single image of a human face as input and generates a high-fidelity 3D Gaussian head representation.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FaceLift: Single Image to 3D Head with View Generation and GS-LRM</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/style.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/script.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            FaceLift: Single Image to 3D Head with View Generation and GS-LRM
+          </h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://weijielyu.github.io/">Weijie Lyu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://zhouyisjtu.github.io/">Yi Zhou</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://faculty.ucmerced.edu/mhyang/">Ming-Hsuan Yang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://zhixinshu.github.io/">Zhixin Shu</a><sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of California, Merced </span>
+            <span class="author-block"><sup>2</sup>Adobe Research </span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- arXiv Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2404.07977"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/weijielyu/FaceLift"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>GitHub</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Results. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Results</h2>
+        <h3 class="title is-4 has-text-centered">Single Image to 3D Head</h3>
+        <h4 class="title is-5 has-text-centered">
+          <a href="./index.html">(Click to return to homepage)</a>
+        </h4>
+        <!-- row 1 -->
+        <h3 class="title is-4 has-text-centered"></h3>
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/teaser.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/teaser.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/teaser.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/013.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/013.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/013.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/035.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/035.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/035.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+          </div>
+        </div>
+        <!-- row 2 -->
+        <h3 class="title is-4 has-text-centered"></h3>
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/004.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/004.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/004.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/003.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/003.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/003.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/025.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/025.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/025.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+          </div>
+        </div>
+        <!-- row 1 -->
+        <h3 class="title is-4 has-text-centered"></h3>
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/ddy.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/ddy.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/ddy.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/012.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/012.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/012.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/010.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/010.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/010.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+          </div>
+        </div>
+        <!-- row 2 -->
+        <h3 class="title is-4 has-text-centered"></h3>
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/019.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/019.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/019.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/016.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/016.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/016.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/027.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/027.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/027.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+          </div>
+        </div>
+        <!-- row 3 -->
+        <h3 class="title is-4 has-text-centered"></h3>
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/017.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/017.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/017.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/032.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/032.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/032.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/030.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/030.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/030.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+          </div>
+        </div>
+        <!-- row 4 -->
+        <h3 class="title is-4 has-text-centered"></h3>
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/000.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/000.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/000.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/001.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/001.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/001.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/002.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/002.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/002.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+          </div>
+        </div>
+        <!-- row 5 -->
+        <h3 class="title is-4 has-text-centered"></h3>
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/005.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/005.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/005.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/006.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/006.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/006.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/037.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/037.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/037.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+          </div>
+        </div>
+        <!-- row 6 -->
+        <h3 class="title is-4 has-text-centered"></h3>
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/011.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/011.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/011.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/015.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/015.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/015.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/018.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/018.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/018.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+          </div>
+        </div>
+        <!-- row 7 -->
+        <h3 class="title is-4 has-text-centered"></h3>
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/020.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/020.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/020.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/023.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/023.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/023.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+            <div class="column">
+              <h2 style="text-align: center;">
+                <img src="https://huggingface.co/wlyu/FaceLift/resolve/main/images/026.png" width="75%">
+              </h2>
+              <video controls muted loop autoplay>
+                <!-- Your video here -->
+                <source src="https://huggingface.co/wlyu/FaceLift/resolve/main/videos/026.mp4" type="video/mp4">
+              </video>
+              <h2 style="text-align: center;">
+                <a
+                  href="splat/index.html?url=https://huggingface.co/wlyu/FaceLift/resolve/main/plys/026.ply">Open
+                  Interactive Viewer
+                </a>
+              </h2> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ Results. -->
+
+<footer class="footer"></footer>
+
+</body>
+</html>
