@@ -5,6 +5,7 @@ University of California, Merced - Adobe Research
 
 [![Website](https://img.shields.io/badge/Website-FaceLift?logo=googlechrome&logoColor=hsl(204%2C%2086%25%2C%2053%25)&label=FaceLift&labelColor=%23f5f5dc&color=hsl(204%2C%2086%25%2C%2053%25))](https://weijielyu.github.io/FaceLift)
 [![Paper](https://img.shields.io/badge/Paper-arXiv?logo=arxiv&logoColor=%23B31B1B&label=arXiv&labelColor=%23f5f5dc&color=%23B31B1B)](https://arxiv.org/abs/2412.17812)
+[![Video](https://img.shields.io/badge/Video-YouTube?logo=youtube&logoColor=%23FF0000&label=YouTube&labelColor=%23f5f5dc&color=%23FF0000)](https://youtu.be/lf0Gck9UOcU)
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fweijielyu%2FFaceLift&count_bg=%2379C83D&title_bg=%23F5F5DC&icon=github.svg&icon_color=%2379C83D&title=🔎&edge_flat=false)](https://hits.seeyoufarm.com)
 
 <div align='center'>
