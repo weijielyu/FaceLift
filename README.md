@@ -13,7 +13,7 @@ University of California, Merced - Adobe Research
 
 > *FaceLift* transforms a single facial image into a high-fidelity 3D Gaussian head representation, and it generalizes remarkably well to real-world human images.
 
-This is a self-reimplementation version of *FaceLift*. Codes will be released soon.
+This is a self-reimplementation of *FaceLift*. Codes will be released soon.
 
 ## Citation
 
