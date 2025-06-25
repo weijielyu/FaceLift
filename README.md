@@ -1,4 +1,4 @@
-# FaceLift: Single Image to 3D Head with View Generation and GS-LRM
+# 🌺ICCV 2025🌺 FaceLift: Learning Generalizable Single Image 3D Face Reconstruction from Synthetic Heads
 
 [Weijie Lyu](https://weijielyu.github.io/), [Yi Zhou](https://zhouyisjtu.github.io/), [Ming-Hsuan Yang](https://faculty.ucmerced.edu/mhyang/), [Zhixin Shu](https://zhixinshu.github.io/)<br>
 University of California, Merced - Adobe Research
@@ -11,7 +11,9 @@ University of California, Merced - Adobe Research
 <img alt="image" src='media/teaser.png'>
 </div>
 
-> *FaceLift* takes a single image of a human face as input and generates a high-fidelity 3D Gaussian head representation. The generated Gaussian representation enables high-quality, full-head novel view synthesis (NVS) while accurately capturing fine details of the face and hair.
+> *FaceLift* transforms a single facial image into a high-fidelity 3D Gaussian head representation, and it generalizes remarkably well to real-world human images.
+
+This is a self-reimplementation version of *FaceLift*. Codes will be released soon.
 
 ## Citation
 
