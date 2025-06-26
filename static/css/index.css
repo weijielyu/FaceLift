@@ -56,7 +56,7 @@ body {
 }
 
 .publication-venue {
-    color: hsl(204, 86%, 53%);
+    color: #555;
     width: fit-content;
     font-weight: bold;
 }
