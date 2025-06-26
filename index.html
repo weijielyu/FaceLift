@@ -130,10 +130,8 @@
     </div>
     <h2 class="subtitle has-text-centered">
       <i>FaceLift</i> transforms a single facial image into a high-fidelity 3D Gaussian head representation. 
-      Trained exclusively on synthetic 3D data, our pipeline first generates sparse, 
-      identity-preserving multiview images of the input head using a diffusion model. 
-      These sparse generated views are then fed into a transformer-based 3D Gaussian Splats reconstructor, 
-      producing a complete and detailed 3D head representation that generalizes remarkably well to real-world human images.
+      Trained exclusively on synthetic 3D data, our pipeline produces a complete and detailed 3D head 
+      representation that generalizes remarkably well to real-world human images.
     </h2>
   </div>
 </section>
@@ -197,14 +195,13 @@
             <img src="static/images/method.png" width="100%">
           </div>
           <p>
-            <strong>Overview of <i>FaceLift</i>.</strong> Given a single image 
-            of a human face as input, we train an image-conditioned, multi-view diffusion model to 
-            generate novel views covering the entire head. By leveraging pre-trained weights and 
-            high-quality synthetic data, our multi-view latent diffusion model can hallucinate unseen 
-            views of the human head with high-fidelity and multi-view consistency. We then fine-tune a
-            GS-LRM, which takes multi-view images and their camera poses as input and generates 3D 
-            Gaussian splats to represent the human head. The generated 3D Gaussian representation enables 
-            full-head novel view synthesis.
+            <strong>Overview of <i>FaceLift</i>.</strong> Given a single image of a human face as input, 
+            we train an image-conditioned, multi-view diffusion model to generate novel views covering 
+            the entire head. By reconstructing the input image and leveraging high-quality synthetic data, 
+            our multi-view latent diffusion model can hallucinate unseen views of the human head with 
+            high-fidelity and multi-view consistency. We then train a transformer-based reconstructor, 
+            which takes multi-view images and their camera poses as input and generates 3D Gaussian Splats 
+            to represent the human head.
           </p>
         </div>
       </div>
@@ -225,8 +222,7 @@
           <a href="./more_results.html">(Click to see more results)</a>
         </h4>
         <p>
-          FaceLift is a feed-forward approach that lifts a single facial image to a detailed 3D reconstruction 
-          with preserved identity features.
+          <i>FaceLift</i> lifts a single facial image to a detailed 3D reconstruction with preserved identity features.
         </p>
         <!-- row 1 -->
         <h3 class="title is-4 has-text-centered"></h3>
@@ -333,7 +329,7 @@
         <h3 class="title is-4 has-text-centered"></h3>
         <h3 class="title is-4 has-text-centered">Video as Input for 4D Novel View Synthesis</h3>
         <p>
-          Given a video as input, FaceLift processes each frame individually and generates 3D Gaussian sequence, 
+          Given a video as input, <i>FaceLift</i> processes each frame individually and generates 3D Gaussian sequence, 
           which enables 4D novel view synthesis.
         </p>
         <!-- row 1 -->
@@ -394,7 +390,7 @@
         </div>
         <h3 class="title is-4 has-text-centered"></h3>
         <p>
-          FaceLift can be combined with 2D face animation methods like <a href="https://liveportrait.github.io" target="_blank">LivePortrait</a> to achieve 3D face animation.
+          <i>FaceLift</i> can be combined with 2D face animation methods like <a href="https://liveportrait.github.io" target="_blank">LivePortrait</a> to achieve 3D face animation.
         </p>
         <!-- row 1 -->
         <h3 class="title is-4 has-text-centered"></h3>
