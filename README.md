@@ -15,6 +15,8 @@ University of California, Merced - Adobe Research
 
 This is a self-reimplementation of *FaceLift*. Codes will be released soon.
 
+In the meantime, if you'd like to try *FaceLift* with your own images, feel free to email them to wlyu3@ucmerced.edu. We'll process them and send the results back to you.
+
 ## Citation
 
 If you find our work useful for your project, please consider citing our paper.
