@@ -1,5 +1,5 @@
-# 🌺ICCV 2025🌺 FaceLift: Learning Generalizable Single Image 3D Face Reconstruction from Synthetic Heads
-
+# FaceLift: Learning Generalizable Single Image 3D Face Reconstruction from Synthetic Heads
+### 🌺ICCV 2025🌺 
 [Weijie Lyu](https://weijielyu.github.io/), [Yi Zhou](https://zhouyisjtu.github.io/), [Ming-Hsuan Yang](https://faculty.ucmerced.edu/mhyang/), [Zhixin Shu](https://zhixinshu.github.io/)<br>
 University of California, Merced - Adobe Research
 
