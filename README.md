@@ -1,3 +1,35 @@
+
+<div align="right">
+  <details>
+    <summary >🌐 Language</summary>
+    <div>
+      <div align="center">
+        <a href="https://openaitx.github.io/view.html?user=weijielyu&project=FaceLift&lang=en">English</a>
+        | <a href="https://openaitx.github.io/view.html?user=weijielyu&project=FaceLift&lang=zh-CN">简体中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=weijielyu&project=FaceLift&lang=zh-TW">繁體中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=weijielyu&project=FaceLift&lang=ja">日本語</a>
+        | <a href="https://openaitx.github.io/view.html?user=weijielyu&project=FaceLift&lang=ko">한국어</a>
+        | <a href="https://openaitx.github.io/view.html?user=weijielyu&project=FaceLift&lang=hi">हिन्दी</a>
+        | <a href="https://openaitx.github.io/view.html?user=weijielyu&project=FaceLift&lang=th">ไทย</a>
+        | <a href="https://openaitx.github.io/view.html?user=weijielyu&project=FaceLift&lang=fr">Français</a>
+        | <a href="https://openaitx.github.io/view.html?user=weijielyu&project=FaceLift&lang=de">Deutsch</a>
+        | <a href="https://openaitx.github.io/view.html?user=weijielyu&project=FaceLift&lang=es">Español</a>
+        | <a href="https://openaitx.github.io/view.html?user=weijielyu&project=FaceLift&lang=it">Italiano</a>
+        | <a href="https://openaitx.github.io/view.html?user=weijielyu&project=FaceLift&lang=ru">Русский</a>
+        | <a href="https://openaitx.github.io/view.html?user=weijielyu&project=FaceLift&lang=pt">Português</a>
+        | <a href="https://openaitx.github.io/view.html?user=weijielyu&project=FaceLift&lang=nl">Nederlands</a>
+        | <a href="https://openaitx.github.io/view.html?user=weijielyu&project=FaceLift&lang=pl">Polski</a>
+        | <a href="https://openaitx.github.io/view.html?user=weijielyu&project=FaceLift&lang=ar">العربية</a>
+        | <a href="https://openaitx.github.io/view.html?user=weijielyu&project=FaceLift&lang=fa">فارسی</a>
+        | <a href="https://openaitx.github.io/view.html?user=weijielyu&project=FaceLift&lang=tr">Türkçe</a>
+        | <a href="https://openaitx.github.io/view.html?user=weijielyu&project=FaceLift&lang=vi">Tiếng Việt</a>
+        | <a href="https://openaitx.github.io/view.html?user=weijielyu&project=FaceLift&lang=id">Bahasa Indonesia</a>
+        | <a href="https://openaitx.github.io/view.html?user=weijielyu&project=FaceLift&lang=as">অসমীয়া</
+      </div>
+    </div>
+  </details>
+</div>
+
 # FaceLift: Learning Generalizable Single Image 3D Face Reconstruction from Synthetic Heads
 
 ### 🌺 ICCV 2025 🌺
