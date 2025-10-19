@@ -142,10 +142,15 @@ If you find our work useful for your research, please consider citing our paper:
 
 Copyright 2025 Adobe Inc.
 
-Codes are licensed under [Apache-2.0](http://www.apache.org/licenses/LICENSE-2.0) 
+Codes are licensed under [Apache-2.0 License](http://www.apache.org/licenses/LICENSE-2.0).
 
 Model weights are licensed from Adobe Inc. under the [Adobe Research License](Adobe%20Research%20License%20v1.2.txt).
 
+## Acknowledgements
+
+This codebase is built upon [Era3D](https://penghtyx.github.io/Era3D/) and [GS-LRM](https://sai-bi.github.io/project/gs-lrm/). We thank the authors for their excellent work.
+
+---
 <div align="center">
 
 **🌟 If you find this project helpful, please give it a star! 🌟**
