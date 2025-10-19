@@ -24,9 +24,9 @@ This is a self-reimplementation of *FaceLift*.
 Model checkpoints will be automatically downloaded from [HuggingFace](https://huggingface.co/wlyu/OpenFaceLift) on first run.
 
 Alternatively, you can manually place the checkpoints in the `checkpoints/` directory:
-- `checkpoints/mvdiffusion/pipeckpts/` - Multi-view diffusion model
-- `checkpoints/gslrm/ckpt_0000000000021125.pt` - GS-LRM model checkpoint
-
+- `checkpoints/mvdiffusion/pipeckpts/` - Multi-view diffusion model checkpoints
+- `checkpoints/gslrm/ckpt_0000000000021125.pt` - GS-LRM model checkpoints
+s
 ### Environment Setup
 
 ```bash
