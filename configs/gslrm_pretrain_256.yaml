@@ -1,0 +1,136 @@
+# =============================================================================
+# General Configuration
+# =============================================================================
+profile: false
+debug: false
+
+# =============================================================================
+# Model Configuration
+# =============================================================================
+model:
+  class_name: gslrm.model.gslrm.GSLRM
+  
+  # Image processing settings
+  image_tokenizer:
+    image_size: 256
+    patch_size: 8
+    in_channels: 9  # 3 RGB + 3 direction + 3 Reference
+
+  # Transformer architecture
+  transformer:
+    d: 1024
+    d_head: 64
+    n_layer: 24
+  
+  # Gaussian splatting configuration
+  gaussians:
+    n_gaussians: 2  # 12288
+    sh_degree: 0
+    
+    upsampler:
+      upsample_factor: 1
+
+  # Model behavior flags
+  add_refsrc_marker: false
+  hard_pixelalign: true
+  use_custom_plucker: true
+  clip_xyz: true
+
+# =============================================================================
+# Training Configuration
+# =============================================================================
+training:
+  # Training runtime settings
+  runtime:
+    use_tf32: true
+    use_amp: true
+    amp_dtype: "bf16"
+    torch_compile: false
+    grad_accum_steps: 1
+    grad_clip_norm: 1.0
+    grad_checkpoint_every: 1
+  
+  # Dataset configuration
+  dataset:
+    dataset_path: "placeholder"
+    
+    # View configuration
+    maximize_view_overlap: true
+    num_views: 8
+    num_input_views: 4
+    target_has_input: true
+    
+    # Data preprocessing
+    normalize_distance_to: 0.0
+    remove_alpha: false
+    background_color: "white"
+  
+  # Data loader settings
+  dataloader:
+    batch_size_per_gpu: 8
+    num_workers: 4
+    num_threads: 32
+    prefetch_factor: 32
+  
+  # Loss function weights
+  losses:
+    l2_loss_weight: 1.0
+    lpips_loss_weight: 0.0
+    perceptual_loss_weight: 0.5
+    ssim_loss_weight: 0.0
+    pixelalign_loss_weight: 0.0
+    masked_pixelalign_loss: true
+    pointsdist_loss_weight: 0.0
+    warmup_pointsdist: true
+    distill_loss_weight: 0.0
+  
+  # Optimizer configuration (AdamW)
+  optimizer:
+    lr: 0.0004
+    beta1: 0.9
+    beta2: 0.95
+    weight_decay: 0.05
+    reset_lr: false
+    reset_weight_decay: false
+    reset_training_state: true
+  
+  # Training schedule
+  schedule:
+    num_epochs: 100000          # dataset epochs
+    early_stop_after_epochs: 100000  # 40
+    max_fwdbwd_passes: 80000    # forward/backward pass steps
+    warmup: 2000                 # parameter update steps
+    l2_warmup_steps: 5000
+  
+  # Checkpointing
+  checkpointing:
+    checkpoint_every: 500       # forward/backward pass steps
+    checkpoint_dir: "checkpoints/gslrm/stage_1"
+  
+  # Logging and monitoring
+  logging:
+    print_every: 20             # forward/backward pass steps
+    vis_every: 250              # forward/backward pass steps
+    
+    # Weights & Biases configuration
+    wandb:
+      project: "facelift_gslrm"
+      exp_name: "stage_1"
+      group: "facelift"
+      job_type: "train"
+      log_every: 50             # forward/backward pass steps
+      offline: false
+
+
+# =============================================================================
+# Inference Configuration
+# =============================================================================
+inference:
+  enabled: false
+  output_dir: "experiments/inference/gslrm/stage_1"
+
+# =============================================================================
+# Validation Configuration
+# =============================================================================
+validation:
+  enabled: false

@@ -1,0 +1,71 @@
+# Copyright (C) 2025, FaceLift Research Group
+# https://github.com/weijielyu/FaceLift
+#
+# This software is free for non-commercial, research and evaluation use 
+# under the terms of the LICENSE.md file.
+#
+# For inquiries contact: wlyu3@ucmerced.edu
+
+from functools import lru_cache
+
+import torch
+from einops import reduce
+from jaxtyping import Float
+from lpips import LPIPS
+from skimage.metrics import structural_similarity
+from torch import Tensor
+
+
+@torch.no_grad()
+def compute_psnr(
+    ground_truth: Float[Tensor, "batch channel height width"],
+    predicted: Float[Tensor, "batch channel height width"],
+) -> Float[Tensor, " batch"]:
+    ground_truth = ground_truth.clip(min=0, max=1)
+    predicted = predicted.clip(min=0, max=1)
+    mse = reduce((ground_truth - predicted) ** 2, "b c h w -> b", "mean")
+    return -10 * mse.log10()
+
+
+@lru_cache(maxsize=None)
+def get_lpips(device: torch.device) -> LPIPS:
+    return LPIPS(net="vgg").to(device)
+
+
+@torch.no_grad()
+def compute_lpips(
+    ground_truth: Float[Tensor, "batch channel height width"],
+    predicted: Float[Tensor, "batch channel height width"],
+) -> Float[Tensor, " batch"]:
+    lpips_fn = get_lpips(predicted.device)
+    # feed 10 images at a time to avoid memory issues
+    batch_size = 10
+    values = []
+    for i in range(0, ground_truth.shape[0], batch_size):
+        value = lpips_fn.forward(
+            ground_truth[i : i + batch_size],
+            predicted[i : i + batch_size],
+            normalize=True,
+        )
+        values.append(value)
+    value = torch.cat(values, dim=0)
+    return value[:, 0, 0, 0]
+
+
+@torch.no_grad()
+def compute_ssim(
+    ground_truth: Float[Tensor, "batch channel height width"],
+    predicted: Float[Tensor, "batch channel height width"],
+) -> Float[Tensor, " batch"]:
+    ssim = [
+        structural_similarity(
+            gt.detach().cpu().numpy(),
+            hat.detach().cpu().numpy(),
+            win_size=11,
+            gaussian_weights=True,
+            channel_axis=0,
+            data_range=1.0,
+        )
+        for gt, hat in zip(ground_truth, predicted)
+    ]
+    return torch.tensor(ssim, dtype=predicted.dtype, device=predicted.device)
