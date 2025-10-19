@@ -138,6 +138,12 @@ If you find our work useful for your research, please consider citing our paper:
 }
 ```
 
+## 📄 License
+
+Copyright 2025 Adobe Inc.
+
+Model weights are licensed from Adobe Inc. under the Adobe Research License.
+
 <div align="center">
 
 **🌟 If you find this project helpful, please give it a star! 🌟**
