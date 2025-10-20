@@ -67,9 +67,7 @@ Open your browser and navigate to `http://localhost:7860` to use the web interfa
 
 ### Data Structure
 
-We sincerely apologize, but due to company policy, our training data will not be publicly available.
-
-If you have your own data, organize your data directory following the structure in `FaceLift/data_sample/`:
+Training data are currently not available. to train with your own data, follow the structure in `FaceLift/data_sample/`:
 
 **Multi-view Diffusion Data:**
 ```
