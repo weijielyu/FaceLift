@@ -7,7 +7,8 @@ University of California, Merced - Adobe Research
 
 [![Website](https://img.shields.io/badge/Website-FaceLift?logo=googlechrome&logoColor=hsl(204%2C%2086%25%2C%2053%25)&label=FaceLift&labelColor=%23f5f5dc&color=hsl(204%2C%2086%25%2C%2053%25))](https://weijielyu.github.io/FaceLift)
 [![Paper](https://img.shields.io/badge/Paper-arXiv?logo=arxiv&logoColor=%23B31B1B&label=arXiv&labelColor=%23f5f5dc&color=%23B31B1B)](https://arxiv.org/abs/2412.17812)
-[![Video](https://img.shields.io/badge/Video-YouTube?logo=youtube&logoColor=%23FF0000&label=YouTube&labelColor=%23f5f5dc&color=%23FF0000)](https://youtu.be/lf0Gck9UOcU)
+[![Video](https://img.shields.io/badge/Video-YouTube?logo=youtube&logoColor=%23FF0000&label=YouTube&labelColor=%23f5f5dc&color=%23FF0000)](https://youtu.be/H-EZKmuYvRM)
+[![Demo](https://img.shields.io/badge/Demo-HuggingFace?logo=huggingface&logoColor=%23FFD21E&label=HuggingFace&labelColor=%23f5f5dc&color=%23FFD21E)](https://huggingface.co/spaces/wlyu/FaceLift)
 
 <div align='center'>
 <img alt="image" src='media/teaser.png'>
@@ -148,4 +149,6 @@ Model weights are licensed from Adobe Inc. under the [Adobe Research License](Ad
 
 ## 🙏 Acknowledgements
 
-This codebase is built upon [Era3D](https://penghtyx.github.io/Era3D/) and [GS-LRM](https://sai-bi.github.io/project/gs-lrm/). We thank the authors for their excellent work.
+This work is built upon [Era3D](https://penghtyx.github.io/Era3D/) and [GS-LRM](https://sai-bi.github.io/project/gs-lrm/). We thank the authors for their excellent work.
+
+The code has been reimplemented and the weights retrained. Results may differ slightly from those reported in the paper.
