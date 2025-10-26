@@ -126,14 +126,13 @@ torchrun --nproc_per_node 8 --nnodes 1 \
 If you find our work useful for your research, please consider citing our paper:
 
 ```bibtex
-@misc{lyu2025facelift,
-    title={FaceLift: Learning Generalizable Single Image 3D Face Reconstruction from Synthetic Heads}, 
-    author={Weijie Lyu and Yi Zhou and Ming-Hsuan Yang and Zhixin Shu},
-    year={2025},
-    eprint={2412.17812},
-    archivePrefix={arXiv},
-    primaryClass={cs.CV},
-    url={https://arxiv.org/abs/2412.17812}
+@InProceedings{Lyu_2025_ICCV,
+    author    = {Lyu, Weijie and Zhou, Yi and Yang, Ming-Hsuan and Shu, Zhixin},
+    title     = {FaceLift: Learning Generalizable Single Image 3D Face Reconstruction from Synthetic Heads},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {12691-12701}
 }
 ```
 
