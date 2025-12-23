@@ -27,7 +27,7 @@ Model checkpoints will be automatically downloaded from [HuggingFace](https://hu
 Alternatively, you can manually place the checkpoints in the `checkpoints/` directory:
 - `checkpoints/mvdiffusion/pipeckpts/` - Multi-view diffusion model checkpoints
 - `checkpoints/gslrm/ckpt_0000000000021125.pt` - GS-LRM model checkpoints
-s
+
 ### Environment Setup
 
 ```bash
