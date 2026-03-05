@@ -64,7 +64,7 @@ Open your browser and navigate to `http://localhost:7860` to use the web interfa
 
 ### Data Structure
 
-Training data are currently not available. to train with your own data, follow the structure in `FaceLift/data_sample/`:
+Training data are currently not available. To train with your own data, follow the structure in `FaceLift/data_sample/`:
 
 **Multi-view Diffusion Data:**
 ```
