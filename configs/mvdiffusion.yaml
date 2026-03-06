@@ -1,0 +1,94 @@
+# Basic model configuration
+n_views: 6
+img_wh: 512
+
+# Model paths (update these to local paths)
+pretrained_model_name_or_path: 'stabilityai/stable-diffusion-2-1-unclip'
+pretrained_unet_path: null 
+revision: null
+
+# Dataset paths (update these to local paths)
+train_dataset:
+  path: data_sample/mvdiffusion/data_mvdiff_train.txt
+  bg_color: 'three_choices'
+validation_dataset:
+  path: data_sample/mvdiffusion/data_mvdiff_val.txt
+  bg_color: 'white'
+
+# Output directories
+checkpoint_prefix: 'checkpoints'
+output_dir: 'experiments/train/mvdiffusion'
+val_out_dir: 'experiments/train/mvdiffusion/val/'
+
+# Training parameters
+seed: 42
+train_batch_size: 8
+validation_batch_size: 4
+max_train_steps: 20000
+gradient_accumulation_steps: 2
+gradient_checkpointing: true
+learning_rate: 1e-4
+step_rules: "1:200000,0.5"
+scale_lr: false
+lr_scheduler: "piecewise_constant"
+lr_warmup_steps: 10
+snr_gamma: 5.0
+use_8bit_adam: false
+allow_tf32: true
+use_ema: true  
+dataloader_num_workers: 32
+adam_beta1: 0.9
+adam_beta2: 0.999
+adam_weight_decay: 1.e-2
+adam_epsilon: 1.e-08
+max_grad_norm: 1.0
+prediction_type: null
+vis_dir: vis
+logging_dir: logs
+mixed_precision: 'fp16' 
+report_to: 'wandb'
+local_rank: -1
+checkpointing_steps: 5000
+checkpoints_total_limit: 20
+resume_from_checkpoint: latest
+enable_xformers_memory_efficient_attention: true
+validation_steps: 1000
+validation_sanity_check: true
+tracker_project_name: 'mvdiffusion'
+
+trainable_modules: null 
+use_classifier_free_guidance: true 
+condition_drop_rate: 0.05
+drop_type: 'drop_as_a_whole'  
+camera_embedding_lr_mult: 1.
+scale_input_latents: true
+
+# Pipeline parameters
+pipe_kwargs:
+  num_views: ${n_views}
+validation_guidance_scales: [1., 3.]
+validation_grid_nrow: ${n_views}
+pipe_validation_kwargs:
+  eta: 1.0
+
+# UNet configuration
+unet_from_pretrained_kwargs:
+  unclip: true
+  num_views: ${n_views}
+  sample_size: 64
+  zero_init_conv_in: true
+
+  init_mvattn_with_selfattn: false
+
+  cd_attention_last: false
+  cd_attention_mid: false
+  multiview_attention: true
+  sparse_mv_attention: true
+  selfattn_block: custom
+
+  addition_downsample: false
+
+# wandb
+wandb_exp_name: "mvdiffusion"
+wandb_group: "facelift"
+wandb_job_type: "train"

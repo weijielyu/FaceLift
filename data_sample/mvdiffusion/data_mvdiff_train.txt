@@ -1,0 +1,1 @@
+/mnt/localssd/FaceLift/data_sample/mvdiffusion/sample_000
