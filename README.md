@@ -10,7 +10,7 @@ University of California, Merced - Adobe Research
 [![Video](https://img.shields.io/badge/Video-YouTube?logo=youtube&logoColor=%23FF0000&label=YouTube&labelColor=%23f5f5dc&color=%23FF0000)](https://youtu.be/H-EZKmuYvRM)
 [![Demo](https://img.shields.io/badge/Demo-HuggingFace?logo=huggingface&logoColor=%23FFD21E&label=HuggingFace&labelColor=%23f5f5dc&color=%23FFD21E)](https://huggingface.co/spaces/wlyu/FaceLift)
 
-🔥**News:** Check out our new work [FaceCam](https://github.com/weijielyu/FaceCam) for portrait video camera control!
+🔥**News**🔥 Check out our new work [FaceCam](https://github.com/weijielyu/FaceCam) for portrait video camera control!
 
 <div align='center'>
 <img alt="image" src='media/teaser.png'>
@@ -126,7 +126,7 @@ torchrun --nproc_per_node 8 --nnodes 1 \
 If you find our work useful for your research, please consider citing our paper:
 
 ```bibtex
-@InProceedings{Lyu_2025_ICCV,
+@InProceedings{FaceLift,
     author    = {Lyu, Weijie and Zhou, Yi and Yang, Ming-Hsuan and Shu, Zhixin},
     title     = {FaceLift: Learning Generalizable Single Image 3D Face Reconstruction from Synthetic Heads},
     booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
